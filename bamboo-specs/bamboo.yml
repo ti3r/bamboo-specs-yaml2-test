@@ -22,12 +22,12 @@ Compile something Job:
   artifacts:
     - name: test_artifact
       pattern: "**/*"
-      required: true
       shared: true
-      jobs:
-        - Build image Job
 
 Build image Job:
   tasks:
     - script:
       - docker build -t dockerreg-prod.icfolson.com/cicd/spec-tests:${bamboo.dockerTag}
+  artifacts:
+    - name: test_artifact
+      required: true
