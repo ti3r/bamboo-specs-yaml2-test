@@ -31,3 +31,5 @@ Build image Job:
   tasks:
     - script:
       - docker build -t dockerreg-prod.icfolson.com/cicd/spec-tests:${bamboo_dockerTag}
+  requirements:
+    - system.docker.executable
