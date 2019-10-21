@@ -26,11 +26,5 @@ Compile something Job:
 
 Build image Job:
   tasks:
-    - artifact-download:
-      source-plan: SPEC-YAMLSPECS2TEST
-      artifacts:
-        - name: test_artifact
-          location: "./"
-          required: true
     - script:
       - docker build -t dockerreg-prod.icfolson.com/cicd/spec-tests:${bamboo.dockerTag}
