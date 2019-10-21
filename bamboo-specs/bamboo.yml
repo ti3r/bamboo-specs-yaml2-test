@@ -26,10 +26,10 @@ Compile something Job:
 
 Build image Job:
   tasks:
+    - artifact-download:
+      artifacts:
+        - name: test_artifact
+          location: "./"
+          required: true
     - script:
       - docker build -t dockerreg-prod.icfolson.com/cicd/spec-tests:${bamboo.dockerTag}
-  artifact-download:
-    artifacts:
-      - name: test_artifact
-        location: "./"
-        required: true
