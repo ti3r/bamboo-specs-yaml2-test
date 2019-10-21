@@ -27,6 +27,7 @@ Compile something Job:
 Build image Job:
   tasks:
     - artifact-download:
+      source-plan: SPEC-YAMLSPECS2TEST
       artifacts:
         - name: test_artifact
           location: "./"
