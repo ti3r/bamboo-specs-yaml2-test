@@ -1,0 +1,31 @@
+---
+version: 2
+plan:
+  project-key: SPEC
+  key: YAMLSPECS2TEST
+  name: Build a Simple Docker Image using specs v2
+
+#Stages
+stages:
+  - Compile something stage:
+    - Compile something Job
+  - Build the image stages:
+    - Build image Job
+
+#Job definition
+Compile something Job:
+  tasks:
+    - script:
+      - echo "Hola Mundo!!!"
+  requirements:
+    - system.docker.executable
+  artifacts:
+    - name: test_artifact
+      pattern: "**/*"
+      required: true
+      shared: true
+
+Build image Job:
+  tasks:
+    - script:
+      - docker build -t dockerreg-prod.icfolson.com/cicd/spec-tests:${bamboo.dockerTag}
