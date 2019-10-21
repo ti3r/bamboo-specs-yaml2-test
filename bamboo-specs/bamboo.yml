@@ -5,6 +5,9 @@ plan:
   key: YAMLSPECS2TEST
   name: Build a Simple Docker Image using specs v2
 
+variables:
+  dockerTag: develop
+
 #Stages
 stages:
   - Compile something stage:
@@ -27,5 +30,4 @@ Compile something Job:
 Build image Job:
   tasks:
     - script:
-      - ls
-      #- docker build -t dockerreg-prod.icfolson.com/cicd/spec-tests:${bamboo.dockerTag}
+      - docker build -t dockerreg-prod.icfolson.com/cicd/spec-tests:${bamboo_dockerTag}
