@@ -17,9 +17,12 @@ stages:
 
 #Job definition
 Compile something Job:
+  docker:
+    image: "alpine:latest"
   tasks:
     - script:
       - echo "Hola Mundo!!!"
+  
   requirements:
     - system.docker.executable
   artifacts:
