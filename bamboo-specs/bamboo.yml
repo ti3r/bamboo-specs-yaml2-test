@@ -31,6 +31,4 @@ Build image Job:
       - docker build -t dockerreg-prod.icfolson.com/cicd/spec-tests:${bamboo.dockerTag}
   artifacts:
     - name: test_artifact
-      pattern: "**/*"
       location: "."
-      required: true
